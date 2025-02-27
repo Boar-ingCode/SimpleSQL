@@ -1,23 +1,49 @@
 # SmallBusinessDB Web App
-A Flask app displaying MySQL data in styled tables.
 
-## Setup
-1. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Create a database: `CREATE DATABASE SmallBusinessDB; USE SmallBusinessDB;`
-3. Run `schema.sql` to create tables.
-4. Run `sample_data.sql` to add sample data.
-5. Test with `queries.sql`.
+A Flask web application that displays data from a MySQL database (`SmallBusinessDB`) in styled HTML tables with an overlay effect. This project is designed for academic purposes and demonstrates SQL database integration with a Python backend.
 
-## Tools Used
-- MySQL 8.0
-- MySQL Workbench (optional)
+## Features
+- Displays all tables from `SmallBusinessDB` (e.g., `Customers`, `Orders`, `Products`, `OrderDetails`).
+- Modern, responsive table design with hover overlays.
+- Built with Flask and MySQL Connector for Python.
 
-## Future Ideas
-- Add a web frontend with PHP or Python.
-- Deploy on a cloud service like AWS RDS or Heroku.
+## Prerequisites
+- **Python 3.6+**: [Download](https://www.python.org/downloads/)
+- **MySQL**: [Download MySQL Community Server](https://dev.mysql.com/downloads/)
+- **Git**: To clone the repository.
 
-### Data
-Data were created using https://www.mockaroo.com/
+## Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/SmallBusinessDB-Web.git
+cd SmallBusinessDB-Web
+```
+
+### 2. Install Dependencies
+Install the required Python packages:
+```bash
+pip install -r requirements.txt
+```
+This installs Flask and mysql-connector-python.
+
+### 3. Set Up MySQL Database
+1. Start MySQL:
+Ensure your MySQL server is running (e.g., via services.msc on Windows or sudo service mysql start on Linux).
+2. Import the Database:
+Use the provided SmallBusinessDB.sql to set up the database:
+```bash
+mysql -u root -p < SmallBusinessDB.sql
+```
+4. Configure Environment Variables
+Set your MySQL credentials as environment variables:
+```bash
+export DB_USER=root
+export DB_PASSWORD=your_password
+export DB_NAME=SmallBusinessDB
+```
+5. Run the Application
+Start the Flask app:
+```bash
+python app.py
+```
